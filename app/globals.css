@@ -3,5 +3,11 @@
 @tailwind utilities;
 
 .hero {
-  background-image: url("/public/lined-background.png");
+  background-image: url("../public/lined-background.png");
+  background-repeat: no-repeat;
+  padding-top: 100px;
+}
+
+.card p {
+  width: 350px;
 }
