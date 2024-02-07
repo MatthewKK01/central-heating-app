@@ -1,10 +1,17 @@
+"use client";
 import Image from "next/image";
 import woman from "../public/woman.png";
 import play from "../public/Icon.svg";
-import IMG from "../public/mo.jpg";
+
 import preview from "../public/preview.png";
+import repair from "../public/repair.jpg";
+import buy from "../public/buy.jpg";
+import sell from "../public/sell.jpg";
 import Link from "next/link";
+import { useState } from "react";
+
 export default function Home() {
+  const [isPhoneActive, setIsPhoneActive] = useState<boolean>(false);
   return (
     <main className="">
       <section className="hero justify-between items-center flex px-24">
@@ -25,33 +32,30 @@ export default function Home() {
           >
             შემოგვიერთდით facebook-ზე
           </Link>
-
-          <p className="font-bold">Watch how we can help</p>
         </div>
         <Image src={woman} alt={"Woman in suit"} />
       </section>
       <div className="bg-[#161C2D]  gap-4 py-8 w-full flex justify-center items-center">
         <Image src={play} alt={"Play icon"} />
         <p className="text-white">
-          Interested how our software works for you?{" "}
+          დაინტერესებული ხარ თუ როგორ მუშაობს ჩვენი სერვისი?{" "}
           <span className="underline cursor-pointer">
-            Watch our 1 minute video
+            უყურე ერთ წუთიან ვიდეოს
           </span>
         </p>
       </div>
       <section className="advices py-32 flex items-center justify-center">
         <article className="w-1/4 mr-14">
           <p className="font-bold text-3xl ">
-            Experienced expoerts are giving advices
+            გამოცდილი ექსპერტები გვირჩევენ თუ უპირატესობები აქვს ჩვენს სერვისს
           </p>
           <p className="text-lg font-thin  mb-7 mt-4">
-            With lots of unique blocks, you can easily build a page without
-            coding. Build your next landing page.
+            გაყიდე, შეიძინე ან შეაკეთე გათბობის სისტემები შეღავათიან ფასებში
           </p>
 
           <Link
+            href="tel:+995551642404"
             className="bg-[#473BF0] mb-7 w-[200px] flex justify-center items-center h-[59px] rounded-lg text-white"
-            href="tel:+995571777401"
           >
             დაგვირეკეთ
           </Link>
@@ -64,23 +68,24 @@ export default function Home() {
             alt="central heater service"
           />
         </div>
-        <article className="flex flex-col justify-between gap-16 ml-20 w-1/5">
-          <div className="flex gap-3 flex-col">
-            <p className="font-bold text-3xl w-10">1M+</p>
+        <article className="flex flex-col justify-between gap-8 ml-20 w-1/5">
+          <div className="flex flex-col">
+            <p className="font-bold text-3xl w-10">1000+</p>
             <p className="text-base font-thin ">
-              Customers visit Albino every month to get their service done.
+              მომხმარებელი ყოველთვე სტუმრობს ჩვენს საიტს რათა სერვისი უფრო
+              ხელმისაწვდომი გახდეს
             </p>
           </div>
-          <div className="flex gap-3 flex-col">
-            <p className="font-bold text-3xl w-10">92%</p>
+          <div className="flex flex-col">
+            <p className="font-bold text-3xl w-10">100%</p>
             <p className="text-base font-thin ">
-              Satisfaction rate comes from our awesome customers.
+              პოზიტიური მაჩვენებელი ჩვენი ერთგული მომხმარებლებისგან
             </p>
           </div>
-          <div className="flex gap-3 flex-col">
-            <p className="font-bold text-3xl w-10">4.9/5.0</p>
+          <div className="flex flex-col">
+            <p className="font-bold text-3xl w-10">5.0/5.0</p>
             <p className="text-base font-thin ">
-              Average customer ratings we have got all over internet.
+              საშუალო სამომხმარებლო რეიტინგი მთელი ინტერნეტის მასშტაბით
             </p>
           </div>
         </article>
@@ -90,19 +95,32 @@ export default function Home() {
         <p className="text-center mb-14 text-4xl">
           სერვისები რომლებსაც ჩვენ გთავაზობთ
         </p>
-        <div className="wrapper flex flex-row justify-between gap-10 max-w-7xl m-auto">
+        <div className="wrapper flex flex-row items-start justify-between gap-10 max-w-7xl m-auto">
           <div className="card">
             <p>გაყიდვა</p>
-            <Image src={preview} alt="central heating boiler sell" />
+            <div className="w-[300px] h-[250px]">
+              {" "}
+              <Image
+                className="object-contain"
+                src={sell}
+                alt="central heating boiler sell"
+              />
+            </div>
             <p className="text-sm  mt-2">
-              ააპირებთ ძველი ცენტრალური გათბობის ქვაბის შეცვლას ? ჩვენი კომპანია
+              აპირებთ ძველი ცენტრალური გათბობის ქვაბის შეცვლას ? ჩვენი კომპანია
               მზადაა თქვენთვის ხელსაყრელ ფასად შევიძინოთ იგი.
             </p>
           </div>
           <div className="card">
             <p>ჩაბარება</p>
             <div>
-              <Image src={preview} alt="central heating boiler buy" />
+              <div className="w-[300px] h-[250px]">
+                <Image
+                  className="object-contain"
+                  src={buy}
+                  alt="central heating boiler buy"
+                />
+              </div>
               <p className="text-sm mt-2">
                 გსურთ ცენტრალური გათბობის სისტემისა და გამათბობელი ქვაბის
                 დაყენება? ჩვენი კომპანია გთავაზობთ მაღალი ხარისხის მომსახურეობას
@@ -112,7 +130,13 @@ export default function Home() {
           </div>
           <div className="card">
             <p>შეკეთება</p>
-            <Image src={preview} alt="central heating boiler repair" />
+            <div className="w-[300px] h-[250px]">
+              <Image
+                className="object-contain"
+                src={repair}
+                alt="central heating boiler repair"
+              />
+            </div>
             <p className="text-sm mt-2">
               გჭირდებათ ცენტრალური გათბობის სისტემის შეცვლა ? ჩვენი სანდო და
               გამოცდილი ტექნიკოსები მზად არიან მოაგვარონ ნებისმიერი პრობლემა

@@ -11,3 +11,8 @@
 .card p {
   width: 350px;
 }
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
