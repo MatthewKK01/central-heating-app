@@ -12,7 +12,5 @@
   width: 350px;
 }
 .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
+  @apply justify-center flex-col flex md:justify-start items-center;
 }
