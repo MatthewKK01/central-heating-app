@@ -1,20 +1,16 @@
-"use client";
 import Image from "next/image";
-import woman from "../public/woman.png";
+import woman from "../public/men.jpg";
 import play from "../public/Icon.svg";
 
-import preview from "../public/preview.png";
 import repair from "../public/repair.jpg";
 import buy from "../public/buy.jpg";
 import sell from "../public/sell.jpg";
 import Link from "next/link";
-import { useState } from "react";
 
 export default function Home() {
-  const [isPhoneActive, setIsPhoneActive] = useState<boolean>(false);
   return (
     <main className="">
-      <section className="hero justify-between max-lg:flex-col items-center flex px-24">
+      <section className="hero justify-between max-lg:flex-col items-center flex md:px-24 max-md:px-10">
         <div className="flex flex-col">
           <h1 className=" text-lg lg:text-4xl lg:w-[60%] lg:leading-tight">
             გაზარდეთ თქვენი კომფორტი ჩვენი ცენტრალური გათბობის სერვისით.
@@ -33,7 +29,10 @@ export default function Home() {
             შემოგვიერთდით facebook-ზე
           </Link>
         </div>
-        <Image src={woman} className="" alt={"Woman in suit"} />
+        <div className="max-md:mb-12">
+          {" "}
+          <Image src={woman} className="" alt={"Woman in suit"} />
+        </div>
       </section>
       <div className="bg-[#161C2D]  gap-4 py-8 w-full flex justify-center items-center max-md:px-12">
         <Image src={play} alt={"Play icon"} />
@@ -99,7 +98,23 @@ export default function Home() {
         <div className="wrapper flex  flex-col md:flex-row items-center  md:items-start justify-between gap-10 max-w-7xl m-auto">
           <div className="card">
             <p className="max-md:text-center md:font-bold text-lg mb-3 ">
-              გაყიდვა
+              შეკეთება
+            </p>
+            <div className="w-[300px] h-[250px]">
+              <Image
+                className="object-contain"
+                src={repair}
+                alt="central heating boiler repair"
+              />
+            </div>
+            <p className="text-sm mt-2">
+              ჩვენი სანდო და გამოცდილი ტექნიკოსები მზად არიან მოაგვარონ
+              ნებისმიერი პრობლემა, სწაფად და ეფექტურად თქვენთვის მისაღებ ფასად
+            </p>
+          </div>
+          <div className="card">
+            <p className="max-md:text-center md:font-bold text-lg mb-3 ">
+              ყიდვა
             </p>
             <div className="w-[300px] h-[250px]">
               <Image
@@ -126,26 +141,8 @@ export default function Home() {
               />
             </div>
             <p className="text-sm mt-2">
-              გსურთ ცენტრალური გათბობის სისტემისა და გამათბობელი ქვაბის
-              დაყენება? ჩვენი კომპანია გთავაზობთ მაღალი ხარისხის მომსახურეობას
-              საუკეთესო პროდუქტით თქვენთვის მორგებულ ფასად
-            </p>
-          </div>
-          <div className="card">
-            <p className="max-md:text-center md:font-bold text-lg mb-3 ">
-              შეკეთება
-            </p>
-            <div className="w-[300px] h-[250px]">
-              <Image
-                className="object-contain"
-                src={repair}
-                alt="central heating boiler repair"
-              />
-            </div>
-            <p className="text-sm mt-2">
-              გჭირდებათ ცენტრალური გათბობის სისტემის შეკეთება ? ჩვენი სანდო და
-              გამოცდილი ტექნიკოსები მზად არიან მოაგვარონ ნებისმიერი პრობლემა
-              სწაფად და ეფექტურათ თქვენთვის მისაღებ ფასად
+              ჩვენი კომპანია გთავაზობთ მაღალი ხარისხის მომსახურეობას საუკეთესო
+              პროდუქტით თქვენთვის მორგებულ ფასად
             </p>
           </div>
         </div>
