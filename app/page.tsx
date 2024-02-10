@@ -1,5 +1,5 @@
 import Image from "next/image";
-import woman from "../public/men.jpg";
+import woman from "../public/ogImage.jpg";
 import play from "../public/Icon.svg";
 
 import repair from "../public/repair.jpg";
