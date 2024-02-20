@@ -23,7 +23,7 @@ export default function Home() {
 
           <Link
             className="bg-[#473BF0] mb-7 w-[200px] text-center flex justify-center items-center h-[59px] rounded-lg text-white"
-            href="https://www.facebook.com/centraluri.gatbobis.servisi"
+            href="https://www.facebook.com/gatbobisservisi.ge"
             target="_blank"
           >
             შემოგვიერთდით facebook-ზე
