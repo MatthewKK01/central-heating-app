@@ -24,6 +24,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=G-C5Q1E304PH`}
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-C5Q1E304PH');
+            `,
+          }}
+        ></script>
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
